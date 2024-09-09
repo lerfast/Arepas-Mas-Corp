@@ -1,0 +1,48 @@
+.carousel-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+  
+  .product-card {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .product-card h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .product-card p {
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  .product-card .pack {
+    display: block;
+    font-size: 1rem;
+    color: #555;
+    margin-top: 5px;
+  }
+  
+  .product-card .price {
+    display: block;
+    font-size: 1.2rem;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .slick-prev:before, .slick-next:before {
+    color: black; /* Color de los botones de navegación */
+  }
+  
