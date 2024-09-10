@@ -23,7 +23,7 @@ function App() {
       duration: 600,  // Duración de la animación más rápida para mejorar rendimiento
       easing: 'ease-in-out',  // Suavidad en las animaciones
       once: true,  // Ejecutar la animación solo una vez para evitar sobrecarga
-      offset: 100,  // Distancia antes de que se active la animación
+      offset: 10,  // Distancia antes de que se active la animación
     });
   }, []);
 
