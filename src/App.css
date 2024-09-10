@@ -1,4 +1,18 @@
 /* GENERAL */
+
+
+/* Previene el desbordamiento de cualquier elemento */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Previene el desbordamiento horizontal */
+}
+
 .App {
   font-family: 'Poppins', sans-serif; /* Fuente moderna */
   color: #333;
@@ -25,6 +39,7 @@ a:hover {
 
 /* HEADER */
 .app-header {
+  width: 100%; /* Asegura que el header ocupe el 100% del ancho */
   height: 80vh;
   background-image: url('./assets/hero-background.jpg'); /* Ruta de la imagen */
   background-size: cover;
@@ -39,6 +54,7 @@ a:hover {
   position: relative;
 }
 
+/* Barra de navegación */
 .navbar {
   position: absolute;
   top: 0;
@@ -49,6 +65,7 @@ a:hover {
   padding: 20px 40px; /* Añade padding a los lados para mover el logo y el menú hamburguesa hacia el centro */
   background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow-x: hidden; /* Asegura que la barra de navegación no se desborde */
 }
 
 .logo {
@@ -61,6 +78,7 @@ a:hover {
   list-style: none;
   display: flex;
   gap: 20px;
+  overflow-x: hidden; /* Evita desbordamiento horizontal en el menú */
 }
 
 .menu li {
@@ -124,13 +142,15 @@ a:hover {
 .menu.open {
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 60px;
   right: 20px;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 10px;
   border-radius: 10px;
   transform: translateY(0);
+  width: auto;
+  max-width: calc(100% - 40px); /* Asegura que el menú no se desborde del viewport */
 }
 
 .menu li {
@@ -184,9 +204,13 @@ a:hover {
 }
 
 .carousel-container {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   padding: 40px 0;
+}
+
+section {
+  overflow-x: hidden;
 }
 
 /* TESTIMONIOS */
@@ -236,6 +260,9 @@ a:hover {
   color: white;
   padding: 50px;
   text-align: center;
+  position: relative; /* Asegura que el footer esté bien colocado */
+  bottom: 0;
+  width: 100%;
 }
 
 .contact-section h2 {
@@ -270,6 +297,12 @@ a:hover {
     margin-top: 60px; /* Elimina el margen negativo en móviles */
     padding: 15px; /* Reduce un poco el padding en móviles */
   }
+
+  .logo {
+    width: 130px;
+    height: auto;
+    margin-left: -12px;
+}
 
   .menu {
     flex-direction: column;

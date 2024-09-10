@@ -20,10 +20,10 @@ function App() {
   // Inicializa AOS para las animaciones al hacer scroll
   useEffect(() => {
     AOS.init({
-      duration: 1200,  // Duración de la animación
+      duration: 600,  // Duración de la animación más rápida para mejorar rendimiento
       easing: 'ease-in-out',  // Suavidad en las animaciones
-      once: true,  // Ejecutar la animación solo una vez
-      offset: 200,  // Distancia antes de que se active la animación
+      once: true,  // Ejecutar la animación solo una vez para evitar sobrecarga
+      offset: 100,  // Distancia antes de que se active la animación
     });
   }, []);
 
@@ -52,9 +52,9 @@ function App() {
           </div>
         </nav>
         <div className="hero-content" data-aos="fade-down">
-          <h1 data-aos="zoom-in" data-aos-delay="300">Arepas & Mas Corp</h1>
-          <p data-aos="fade-up" data-aos-delay="500">Auténticos sabores colombianos directo a tu mesa</p>
-          <a href="#products" className="cta-button" data-aos="zoom-in" data-aos-delay="700">Explorar Productos</a>
+          <h1 data-aos="zoom-in" data-aos-delay="200">Arepas & Mas Corp</h1>
+          <p data-aos="fade-up" data-aos-delay="300">Auténticos sabores colombianos directo a tu mesa</p>
+          <a href="#products" className="cta-button" data-aos="zoom-in" data-aos-delay="400">Explorar Productos</a>
         </div>
       </header>
 
@@ -63,12 +63,12 @@ function App() {
         <div className="about-content">
           <div className="about-text">
             <h2 data-aos="fade-right">Sobre Nosotros</h2>
-            <p data-aos="fade-left" data-aos-delay="200">
+            <p data-aos="fade-left" data-aos-delay="100">
               En Arepas & Mas Corp, ofrecemos una variedad de alimentos colombianos de la más alta calidad.
               Nos dedicamos a traer los sabores auténticos de Colombia a cada mesa, con productos elaborados 
               con ingredientes frescos y tradicionales.
             </p>
-            <a href="#contact" className="cta-button" data-aos="fade-up" data-aos-delay="400">Contáctanos</a>
+            <a href="#contact" className="cta-button" data-aos="fade-up" data-aos-delay="200">Contáctanos</a>
           </div>
         </div>
       </section>
@@ -82,17 +82,17 @@ function App() {
       <section id="testimonials" className="testimonials-section" data-aos="fade-up">
         <h2 data-aos="zoom-in">Lo que dicen nuestros clientes</h2>
         <div className="testimonials">
-          <div className="testimonial" data-aos="flip-left" data-aos-delay="200">
+          <div className="testimonial" data-aos="flip-left" data-aos-delay="100">
             <img src={mujer1} alt="María Rodríguez" />
             <p>"Las arepas son deliciosas y me recuerdan a mi hogar en Colombia."</p>
             <span>- María Rodríguez</span>
           </div>
-          <div className="testimonial" data-aos="flip-left" data-aos-delay="400">
+          <div className="testimonial" data-aos="flip-left" data-aos-delay="200">
             <img src={hombre} alt="Juan Pérez" />
             <p>"Excelente calidad, especialmente los buñuelos y el pandeyuca."</p>
             <span>- Juan Pérez</span>
           </div>
-          <div className="testimonial" data-aos="flip-left" data-aos-delay="600">
+          <div className="testimonial" data-aos="flip-left" data-aos-delay="300">
             <img src={mujer2} alt="Laura Gómez" />
             <p>"Servicio rápido y productos frescos. Altamente recomendado."</p>
             <span>- Laura Gómez</span>
@@ -103,9 +103,9 @@ function App() {
       {/* SECCIÓN DE CONTACTO */}
       <footer id="contact" className="contact-section" data-aos="fade-up">
         <h2>Contacto</h2>
-        <p data-aos="fade-up" data-aos-delay="200">Para pedidos, puedes comunicarte al: <strong>+1(786)-543-7061</strong></p>
-        <p data-aos="fade-up" data-aos-delay="400">Gracias por preferirnos. ¡Esperamos llevar los sabores de Colombia hasta ti!</p>
-        <div className="social-media" data-aos="fade-up" data-aos-delay="600">
+        <p data-aos="fade-up" data-aos-delay="100">Para pedidos, puedes comunicarte al: <strong>+1(786)-543-7061</strong></p>
+        <p data-aos="fade-up" data-aos-delay="200">Gracias por preferirnos. ¡Esperamos llevar los sabores de Colombia hasta ti!</p>
+        <div className="social-media" data-aos="fade-up" data-aos-delay="300">
           <a href="#facebook" className="social-icon">Facebook</a>
           <a href="#instagram" className="social-icon">Instagram</a>
           <a href="#twitter" className="social-icon">Twitter</a>
