@@ -45,14 +45,16 @@ a:hover {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  align-items: center; /* Alinea verticalmente el logo y el menú */
+  padding: 20px 40px; /* Añade padding a los lados para mover el logo y el menú hamburguesa hacia el centro */
   background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
-  width: 120px;
+  width: 150px;
   height: auto;
+  margin-left: 30px;
 }
 
 .menu {
@@ -79,7 +81,6 @@ a:hover {
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7); /* Sombra de texto más fuerte */
 }
 
-
 .hero-content p {
   font-size: 1.5rem;
   color: #fff; /* El texto también será blanco para contrastar */
@@ -100,7 +101,42 @@ a:hover {
   background-color: #d35400;
 }
 
-/* SOBRE NOSOTROS */
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 20px; /* Mueve el icono de hamburguesa hacia la izquierda */
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+/* MOBILE MENU (CERRADO) */
+.menu {
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  transform: translateY(0);
+}
+
+.menu li {
+  margin-bottom: 10px;
+}
+
 /* SOBRE NOSOTROS */
 .about-us {
   display: flex;
@@ -135,7 +171,6 @@ a:hover {
   background-color: #0056b3;
 }
 
-
 /* PRODUCTOS */
 .products-section {
   background-color: #f5f5f5;
@@ -159,6 +194,7 @@ a:hover {
   padding: 50px;
   background-color: #007bff;
   color: white;
+  text-align: center; /* Centramos el título */
 }
 
 .testimonials-section h2 {
@@ -226,16 +262,14 @@ a:hover {
   background-color: #f39c12;
 }
 
-/* MEDIA QUERIES - RESPONISVE DESIGN */
+/* MEDIA QUERIES - RESPONSIVE DESIGN */
 
 /* Para pantallas de tablets (anchura máxima de 1024px) */
 @media (max-width: 1024px) {
-
-.hero-content {
+  .hero-content {
     margin-top: 60px; /* Elimina el margen negativo en móviles */
     padding: 15px; /* Reduce un poco el padding en móviles */
   }
-
 
   .menu {
     flex-direction: column;
@@ -250,7 +284,7 @@ a:hover {
   .about-text {
     max-width: 90%;
   }
-  
+
   .testimonials {
     flex-direction: column; /* Cambia a disposición en columna */
     align-items: center; /* Alinea los elementos en el centro */
@@ -314,5 +348,18 @@ a:hover {
 
   .contact-section h2 {
     font-size: 2rem;
+  }
+
+  /* Mostrar el menú hamburguesa en móviles */
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.open {
+    display: flex;
   }
 }

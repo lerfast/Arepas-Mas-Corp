@@ -22,84 +22,84 @@ import papasCriollas from '../assets/papas_criollas.jpg';
 const products = [
   {
     name: 'Arepa Plain Grande',
-    description: 'Paquete de 10 unidades',
+    description: 'Paquete de 10 unidades - Producto prehorneado',
     pack: '10',
     price: '$7.50',
     image: arepaPlainGrande
   },
   {
     name: 'Arepa Plain Pequeña',
-    description: 'Paquete de 20 unidades',
+    description: 'Paquete de 20 unidades - Producto prehorneado',
     pack: '20',
     price: '$7.50',
     image: arepaPlainPequena
   },
   {
     name: 'Arepa de Chocolo',
-    description: 'Paquete de 5 unidades',
+    description: 'Paquete de 5 unidades - Producto prehorneado',
     pack: '5',
     price: '$7.50',
     image: arepaChocolo
   },
   {
     name: 'Arepa de Queso',
-    description: 'Paquete de 5 unidades',
+    description: 'Paquete de 5 unidades - Producto prehorneado',
     pack: '5',
     price: '$8.00',
     image: arepaQueso
   },
   {
     name: 'Deditos de Queso Prehorneados',
-    description: 'Paquete de 10 unidades',
+    description: 'Paquete de 10 unidades - Producto prehorneado',
     pack: '10',
     price: '$11.00',
     image: deditosQueso
   },
   {
     name: 'Pandebono Crudo',
-    description: 'Paquete de 10 unidades',
+    description: 'Paquete de 10 unidades - Producto prehorneado',
     pack: '10',
     price: '$11.00',
     image: pandebono
   },
   {
     name: 'Chorizo',
-    description: 'Paquete de 4 unidades',
+    description: 'Paquete de 4 unidades - Producto prehorneado',
     pack: '4',
     price: '$7.50',
     image: chorizo
   },
   {
     name: 'Morcilla',
-    description: 'Paquete de 4 unidades',
+    description: 'Paquete de 4 unidades - Producto prehorneado',
     pack: '4',
     price: '$7.50',
     image: morcilla
   },
   {
     name: 'Pandeyuca',
-    description: 'Paquete de 10 unidades',
+    description: 'Paquete de 10 unidades - Producto prehorneado',
     pack: '10',
     price: '$12.00',
     image: pandeyuca
   },
   {
     name: 'Buñuelos',
-    description: 'Paquete de 20 unidades',
+    description: 'Paquete de 20 unidades - Producto prehorneado',
     pack: '20',
     price: '$25.00',
     image: bunuelos
   },
   {
     name: 'Empanadas',
-    description: 'Paquete de 25 unidades',
+    description: 'Paquete de 25 unidades - Producto prehorneado',
     pack: '25',
     price: '$28.00',
     image: empanadas
   },
   {
     name: 'Papas Criollas',
-    description: 'Paquete de 2 libras',
+    description: 'Paquete de 2 libras - Producto prehorneado',
     pack: '2 LBS',
     price: '$7.00',
     image: papasCriollas
@@ -126,7 +126,7 @@ const ProductCarousel = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1
         }
       }
