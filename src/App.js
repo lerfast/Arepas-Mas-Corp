@@ -20,11 +20,12 @@ function App() {
   // Inicializa AOS para las animaciones al hacer scroll
   useEffect(() => {
     AOS.init({
-      duration: 600,  // Duración de la animación más rápida para mejorar rendimiento
-      easing: 'ease-in-out',  // Suavidad en las animaciones
-      once: true,  // Ejecutar la animación solo una vez para evitar sobrecarga
-      offset: 10,  // Distancia antes de que se active la animación
+      duration: 800,  // Duración estándar de la animación
+      easing: 'ease-in-out',  // Suavidad de las animaciones
+      once: true,  // Ejecutar la animación solo una vez
+      offset: 10,  // Iniciar animaciones más pronto en el scroll
     });
+    AOS.refresh();  // Refrescar AOS para asegurar que las animaciones se carguen bien
   }, []);
 
   // Función para alternar el menú
@@ -83,17 +84,17 @@ function App() {
         <h2 data-aos="zoom-in">Lo que dicen nuestros clientes</h2>
         <div className="testimonials">
           <div className="testimonial" data-aos="flip-left" data-aos-delay="100">
-            <img src={mujer1} alt="María Rodríguez" />
+            <img src={mujer1} alt="María Rodríguez" loading="lazy" />
             <p>"Las arepas son deliciosas y me recuerdan a mi hogar en Colombia."</p>
             <span>- María Rodríguez</span>
           </div>
           <div className="testimonial" data-aos="flip-left" data-aos-delay="200">
-            <img src={hombre} alt="Juan Pérez" />
+            <img src={hombre} alt="Juan Pérez" loading="lazy" />
             <p>"Excelente calidad, especialmente los buñuelos y el pandeyuca."</p>
             <span>- Juan Pérez</span>
           </div>
           <div className="testimonial" data-aos="flip-left" data-aos-delay="300">
-            <img src={mujer2} alt="Laura Gómez" />
+            <img src={mujer2} alt="Laura Gómez" loading="lazy" />
             <p>"Servicio rápido y productos frescos. Altamente recomendado."</p>
             <span>- Laura Gómez</span>
           </div>

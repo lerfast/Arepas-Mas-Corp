@@ -126,7 +126,7 @@ const ProductCarousel = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1
         }
       }
@@ -139,7 +139,7 @@ const ProductCarousel = () => {
       <Slider {...settings}>
         {products.map((product, index) => (
           <div key={index} className="product-card">
-            <img src={product.image} alt={product.name} />
+            <img src={product.image} alt={product.name} loading="lazy" />
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <span className="pack">Pack: {product.pack}</span>
