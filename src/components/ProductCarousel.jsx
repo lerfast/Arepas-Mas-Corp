@@ -49,14 +49,14 @@ const products = [
     image: arepaQueso
   },
   {
-    name: 'Deditos de Queso Prehorneados',
+    name: 'Tequeño de Queso',
     description: 'Paquete de 10 unidades - Producto prehorneado',
     pack: '10',
     price: '$11.00',
     image: deditosQueso
   },
   {
-    name: 'Pandebono Crudo',
+    name: 'Pandebono',
     description: 'Paquete de 10 unidades - Producto prehorneado',
     pack: '10',
     price: '$11.00',
@@ -64,21 +64,21 @@ const products = [
   },
   {
     name: 'Chorizo',
-    description: 'Paquete de 4 unidades - Producto prehorneado',
+    description: 'Paquete de 4 unidades - Producto Colombiano',
     pack: '4',
     price: '$7.50',
     image: chorizo
   },
   {
     name: 'Morcilla',
-    description: 'Paquete de 4 unidades - Producto prehorneado',
+    description: 'Paquete de 4 unidades - Producto Colombiano',
     pack: '4',
     price: '$7.50',
     image: morcilla
   },
   {
     name: 'Pandeyuca',
-    description: 'Paquete de 10 unidades - Producto prehorneado',
+    description: 'Paquete de 10 unidades - Producto Crudo',
     pack: '10',
     price: '$12.00',
     image: pandeyuca
@@ -92,14 +92,14 @@ const products = [
   },
   {
     name: 'Empanadas',
-    description: 'Paquete de 25 unidades - Producto prehorneado',
+    description: 'Paquete de 25 unidades - Producto pre frito',
     pack: '25',
     price: '$28.00',
     image: empanadas
   },
   {
     name: 'Papas Criollas',
-    description: 'Paquete de 2 libras - Producto prehorneado',
+    description: 'Paquete de 2 libras - Producto pre frito',
     pack: '2 LBS',
     price: '$7.00',
     image: papasCriollas
