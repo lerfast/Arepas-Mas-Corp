@@ -39,9 +39,9 @@ a:hover {
 
 /* HEADER */
 .app-header {
-  width: 100%; /* Asegura que el header ocupe el 100% del ancho */
+  width: 100%;
   height: 80vh;
-  background-image: url('./assets/hero-background.jpg'); /* Ruta de la imagen */
+  background-image: url('./assets/hero-background.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -51,21 +51,23 @@ a:hover {
   color: white;
   text-align: center;
   padding: 20px;
-  position: relative;
+  position: relative; /* Mantén este relativo para el contenido dentro del header */
 }
 
 /* Barra de navegación */
 .navbar {
-  position: absolute;
+  position: fixed; /* Esto hace que el menú de navegación quede fijo */
   top: 0;
   width: 100%;
+  height: 13%;
+  z-index: 1000; /* Asegura que el header esté siempre sobre otros elementos */
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Alinea verticalmente el logo y el menú */
-  padding: 20px 40px; /* Añade padding a los lados para mover el logo y el menú hamburguesa hacia el centro */
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  overflow-x: hidden; /* Asegura que la barra de navegación no se desborde */
+  overflow-x: hidden;
 }
 
 .logo {
@@ -144,8 +146,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 60px;
-  right: 20px;
+  top: 18px;
+  right: 111px;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 10px;
   border-radius: 10px;
@@ -290,6 +292,39 @@ section {
   background-color: #f39c12;
 }
 
+
+/* Estilo para el ícono de WhatsApp */
+.whatsapp-link {
+  text-decoration: none;
+  margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.whatsapp-icon {
+  color: #25D366; /* Color verde de WhatsApp */
+  font-size: 24px; /* Ajusta el tamaño del ícono */
+  margin-right: -5px; /* Espacio entre el ícono y el número */
+  margin-left: 10px;
+}
+
+.whatsapp-link:hover .whatsapp-icon {
+  color: #128C7E; /* Un verde más oscuro al hacer hover */
+}
+
+/* Si necesitas ajustar los íconos de redes sociales */
+.social-icon {
+  font-size: 24px;
+  margin-right: 15px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #3498db; /* Color al hacer hover en los íconos sociales */
+}
+
+
 /* MEDIA QUERIES - RESPONSIVE DESIGN */
 
 /* Para pantallas de tablets (anchura máxima de 1024px) */
@@ -395,5 +430,9 @@ section {
 
   .menu.open {
     display: flex;
+  }
+  .testimonials-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
   }
 }

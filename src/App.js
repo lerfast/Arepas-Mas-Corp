@@ -1,8 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import ProductCarousel from './components/ProductCarousel';
+import Cart from './components/Cart'; // Importa el componente del carrito
+import Checkout from './components/Checkout'; // Importa el componente de checkout
 import logo from './assets/logo.png'; // Importa el logo
 import heroBackground from './assets/hero-background.jpg'; // Imagen de fondo para el header
+import { CartProvider, CartContext } from './context/CartContext'; // Importa CartContext
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';  // Ícono de WhatsApp
+
 
 // Importa las imágenes de los clientes
 import mujer1 from './assets/mujer1.jpg';
@@ -14,51 +21,30 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // Importa los estilos de AOS
 
 function App() {
-  // Estado para controlar si el menú está abierto o cerrado
   const [isMenuOpen, setMenuOpen] = useState(false);
 
-  // Inicializa AOS para las animaciones al hacer scroll
   useEffect(() => {
     AOS.init({
-      duration: 800,  // Duración estándar de la animación
-      easing: 'ease-in-out',  // Suavidad de las animaciones
-      once: true,  // Ejecutar la animación solo una vez
-      offset: 10,  // Iniciar animaciones más pronto en el scroll
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 10,
     });
-    AOS.refresh();  // Refrescar AOS para asegurar que las animaciones se carguen bien
+    AOS.refresh();
   }, []);
 
-  // Función para alternar el menú
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
 
-  return (
-    <div className="App">
-      {/* HEADER CON IMAGEN DE FONDO Y MENÚ */}
-      <header className="app-header" style={{ backgroundImage: `url(${heroBackground})` }}>
-        <nav className="navbar">
-          <img src={logo} alt="Arepas & Mas Corp" className="logo" />
-          <ul className={`menu ${isMenuOpen ? 'open' : ''}`}> {/* Clase dinámica para el menú hamburguesa */}
-            <li><a href="#about" onClick={toggleMenu}>Sobre Nosotros</a></li>
-            <li><a href="#products" onClick={toggleMenu}>Productos</a></li>
-            <li><a href="#testimonials" onClick={toggleMenu}>Testimonios</a></li>
-            <li><a href="#contact" onClick={toggleMenu}>Contacto</a></li>
-          </ul>
-          {/* Icono de hamburguesa para móvil */}
-          <div className="hamburger" onClick={toggleMenu}>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-          </div>
-        </nav>
-        <div className="hero-content" data-aos="fade-down">
-          <h1 data-aos="zoom-in" data-aos-delay="200">Arepas & Mas Corp</h1>
-          <p data-aos="fade-up" data-aos-delay="300">Auténticos sabores colombianos directo a tu mesa</p>
-          <a href="#products" className="cta-button" data-aos="zoom-in" data-aos-delay="400">Explorar Productos</a>
-        </div>
-      </header>
+  const closeMenu = () => {
+    setMenuOpen(false); // Asegura que el menú se cierre
+  };
 
+  const HomePage = () => (
+    <>
+      {/* HEADER CON IMAGEN DE FONDO Y MENÚ */}
+      <Header />
       {/* SECCIÓN DE SOBRE NOSOTROS */}
       <section id="about" className="about-us" data-aos="fade-up">
         <div className="about-content">
@@ -100,19 +86,83 @@ function App() {
           </div>
         </div>
       </section>
+    </>
+  );
 
-      {/* SECCIÓN DE CONTACTO */}
-      <footer id="contact" className="contact-section" data-aos="fade-up">
-        <h2>Contacto</h2>
-        <p data-aos="fade-up" data-aos-delay="100">Para pedidos, puedes comunicarte al: <strong>+1(786)-543-7061</strong></p>
-        <p data-aos="fade-up" data-aos-delay="200">Gracias por preferirnos. ¡Esperamos llevar los sabores de Colombia hasta ti!</p>
-        <div className="social-media" data-aos="fade-up" data-aos-delay="300">
-          <a href="#facebook" className="social-icon">Facebook</a>
-          <a href="#instagram" className="social-icon">Instagram</a>
-          <a href="#twitter" className="social-icon">Twitter</a>
+  const Header = () => {
+    const { cart } = useContext(CartContext); // Accede al contexto del carrito
+    const itemCount = cart.reduce((acc, item) => acc + item.quantity, 0); // Calcula el total de items
+
+    return (
+      <header className="app-header" style={{ backgroundImage: `url(${heroBackground})` }}>
+        <nav className="navbar">
+          <img src={logo} alt="Arepas & Mas Corp" className="logo" />
+          <ul className={`menu ${isMenuOpen ? 'open' : ''}`}>
+            <li><a href="#about" onClick={closeMenu}>Sobre Nosotros</a></li>
+            <li><a href="#products" onClick={closeMenu}>Productos</a></li>
+            <li><a href="#testimonials" onClick={closeMenu}>Testimonios</a></li>
+            <li><a href="#contact" onClick={closeMenu}>Contacto</a></li>
+            <li>
+              <Link to="/cart" onClick={closeMenu}>
+                Carrito {itemCount > 0 && `(${itemCount})`}
+              </Link>
+            </li>
+          </ul>
+          <div className="hamburger" onClick={toggleMenu}>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div>
+        </nav>
+        <div className="hero-content" data-aos="fade-down">
+          <h1 data-aos="zoom-in" data-aos-delay="200">Arepas & Mas Corp</h1>
+          <p data-aos="fade-up" data-aos-delay="300">Auténticos sabores colombianos directo a tu mesa</p>
+          <a href="#products" className="cta-button" data-aos="zoom-in" data-aos-delay="400">Explorar Productos</a>
         </div>
-      </footer>
-    </div>
+      </header>
+    );
+  };
+
+  return (
+    <CartProvider>
+      <Router basename="/arepas-mas-corp">
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+          </Routes>
+
+          {/* SECCIÓN DE CONTACTO */}
+          <footer id="contact" className="contact-section" data-aos="fade-up">
+  <h2>Contacto</h2>
+  <p data-aos="fade-up" data-aos-delay="100">
+    Para pedidos, puedes comunicarte al: 
+    <a
+      href="https://wa.me/17865437061"  // Aquí debes poner tu número de WhatsApp precedido por el código del país
+      target="_blank"
+      rel="noopener noreferrer"
+      className="whatsapp-link"
+      aria-label="Contacta vía WhatsApp"
+    >
+      <FontAwesomeIcon icon={faWhatsapp} className="whatsapp-icon" /> {/* Ícono de WhatsApp */}
+    </a>
+    <strong>+1(786)-543-7061</strong> {/* Número de teléfono */}
+  </p>
+  <p data-aos="fade-up" data-aos-delay="200">
+    Gracias por preferirnos. ¡Esperamos llevar los sabores de Colombia hasta ti!
+  </p>
+  
+  <div className="social-media" data-aos="fade-up" data-aos-delay="300">
+    <a href="#facebook" className="social-icon">Facebook</a>
+    <a href="#instagram" className="social-icon">Instagram</a>
+    <a href="#twitter" className="social-icon">Twitter</a>
+  </div>
+</footer>
+
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 

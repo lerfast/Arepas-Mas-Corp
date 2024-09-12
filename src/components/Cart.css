@@ -1,0 +1,184 @@
+/* Contenedor principal del carrito */
+.cart-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo del título */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Lista de artículos del carrito */
+.cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+/* Cada elemento del carrito */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Información del artículo */
+.item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+}
+
+.item-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Sección editable de la cantidad */
+.quantity-edit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.quantity-edit input {
+    width: 50px;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Estilo del precio */
+.item-price {
+    font-size: 1.2rem;
+    color: #e74c3c;
+}
+
+/* Botón para eliminar artículo */
+.remove-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+    background-color: #c0392b;
+}
+
+/* Acciones del carrito (botones) */
+.cart-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.clear-cart-button,
+.checkout-button {
+    background-color: #f39c12;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.clear-cart-button:hover,
+.checkout-button:hover {
+    background-color: #d35400;
+}
+
+/* Estilo cuando el carrito está vacío */
+.cart-empty {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 50px;
+    color: #333;
+}
+
+.cart-empty i.empty-icon {
+    font-size: 4rem;
+    color: #ddd;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.cart-empty p {
+    font-size: 1.2rem;
+    color: #777;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animación para el mensaje vacío */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Ajustes para pantallas más pequeñas (tablets y móviles) */
+@media (max-width: 768px) {
+    .cart-container {
+        padding: 15px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .clear-cart-button,
+    .checkout-button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .item-name {
+        font-size: 1.1rem;
+    }
+
+    .item-price {
+        font-size: 1.1rem;
+    }
+}
