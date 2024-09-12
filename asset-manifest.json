@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/arepas-mas-corp/static/css/main.de494215.css",
+    "main.css": "/arepas-mas-corp/static/css/main.9a8a7c1e.css",
     "main.js": "/arepas-mas-corp/static/js/main.93bef780.js",
     "static/js/453.2a5bd422.chunk.js": "/arepas-mas-corp/static/js/453.2a5bd422.chunk.js",
     "static/media/arepa_plain_pequena.jpg": "/arepas-mas-corp/static/media/arepa_plain_pequena.95ead0bd2e92ed723e8b.jpg",
@@ -24,12 +24,12 @@
     "static/media/slick.ttf": "/arepas-mas-corp/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/arepas-mas-corp/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/arepas-mas-corp/index.html",
-    "main.de494215.css.map": "/arepas-mas-corp/static/css/main.de494215.css.map",
+    "main.9a8a7c1e.css.map": "/arepas-mas-corp/static/css/main.9a8a7c1e.css.map",
     "main.93bef780.js.map": "/arepas-mas-corp/static/js/main.93bef780.js.map",
     "453.2a5bd422.chunk.js.map": "/arepas-mas-corp/static/js/453.2a5bd422.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.de494215.css",
+    "static/css/main.9a8a7c1e.css",
     "static/js/main.93bef780.js"
   ]
 }
