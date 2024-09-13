@@ -154,7 +154,7 @@ function App() {
 
             {/* Párrafo adicional de promoción personal */}
             <p data-aos="fade-up" data-aos-delay="300" style={{ marginTop: '20px', fontStyle: 'italic', fontSize: '1rem' }}>
-              Sitio Web desarrollado por <strong>Luis Emilio Rojas</strong>. Contáctame para crear tu sitio web: 
+              Sitio Web desarrollado por <strong>Luis Emilio Rojas</strong>. Contáctame tocando el ícono para crear tu sitio web: 
               <a href="https://wa.me/573187757620" target="_blank" rel="noopener noreferrer" className="whatsapp-link">
                 <FontAwesomeIcon icon={faWhatsapp} className="whatsapp-icon" /> 
               </a>
