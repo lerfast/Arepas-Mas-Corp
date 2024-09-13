@@ -40,7 +40,7 @@ const products = [
   },
   {
     id: 3,
-    name: 'Arepa de Chocolo',
+    name: 'Arepa de Choclo',
     description: 'Paquete de 5 unidades - Producto prehorneado',
     pack: '5',
     price: 7.50,
