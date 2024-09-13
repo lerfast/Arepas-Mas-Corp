@@ -8,8 +8,7 @@ import logo from './assets/logo.png'; // Importa el logo
 import heroBackground from './assets/hero-background.jpg'; // Imagen de fondo para el header
 import { CartProvider, CartContext } from './context/CartContext'; // Importa CartContext
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';  // Ícono de WhatsApp
-
+import { faWhatsapp, faFacebook, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';  // Íconos de redes sociales
 
 // Importa las imágenes de los clientes
 import mujer1 from './assets/mujer1.jpg';
@@ -135,31 +134,44 @@ function App() {
 
           {/* SECCIÓN DE CONTACTO */}
           <footer id="contact" className="contact-section" data-aos="fade-up">
-  <h2>Contacto</h2>
-  <p data-aos="fade-up" data-aos-delay="100">
-    Para pedidos, puedes comunicarte al: 
-    <a
-      href="https://wa.me/17865437061"  // Aquí debes poner tu número de WhatsApp precedido por el código del país
-      target="_blank"
-      rel="noopener noreferrer"
-      className="whatsapp-link"
-      aria-label="Contacta vía WhatsApp"
-    >
-      <FontAwesomeIcon icon={faWhatsapp} className="whatsapp-icon" /> {/* Ícono de WhatsApp */}
-    </a>
-    <strong>+1(786)-543-7061</strong> {/* Número de teléfono */}
-  </p>
-  <p data-aos="fade-up" data-aos-delay="200">
-    Gracias por preferirnos. ¡Esperamos llevar los sabores de Colombia hasta ti!
-  </p>
-  
-  <div className="social-media" data-aos="fade-up" data-aos-delay="300">
-    <a href="#facebook" className="social-icon">Facebook</a>
-    <a href="#instagram" className="social-icon">Instagram</a>
-    <a href="#twitter" className="social-icon">Twitter</a>
-  </div>
-</footer>
+            <h2>Contacto</h2>
+            <p data-aos="fade-up" data-aos-delay="100">
+              Para pedidos, también puedes comunicarte al: 
+              <a
+                href="https://wa.me/17865437061"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="whatsapp-link"
+                aria-label="Contacta vía WhatsApp"
+              >
+                <FontAwesomeIcon icon={faWhatsapp} className="whatsapp-icon" /> {/* Ícono de WhatsApp */}
+              </a>
+              <strong>+1(786)-543-7061</strong> {/* Número de teléfono */}
+            </p>
+            <p data-aos="fade-up" data-aos-delay="200">
+              Gracias por preferirnos. ¡Esperamos llevar los sabores de Colombia para ti o tu negocio!
+            </p>
 
+            {/* Párrafo adicional de promoción personal */}
+            <p data-aos="fade-up" data-aos-delay="300" style={{ marginTop: '20px', fontStyle: 'italic', fontSize: '1rem' }}>
+              Sitio Web desarrollado por <strong>Luis Emilio Rojas</strong>. Contáctame para crear tu sitio web: 
+              <a href="https://wa.me/573187757620" target="_blank" rel="noopener noreferrer" className="whatsapp-link">
+                <FontAwesomeIcon icon={faWhatsapp} className="whatsapp-icon" /> 
+              </a>
+            </p>
+
+            <div className="social-media" data-aos="fade-up" data-aos-delay="400">
+              <a href="https://facebook.com" className="social-icon" aria-label="Facebook">
+                <FontAwesomeIcon icon={faFacebook} />
+              </a>
+              <a href="https://instagram.com" className="social-icon" aria-label="Instagram">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+              <a href="https://x.com" className="social-icon" aria-label="X (anteriormente Twitter)">
+                <FontAwesomeIcon icon={faXTwitter} />
+              </a>
+            </div>
+          </footer>
         </div>
       </Router>
     </CartProvider>
