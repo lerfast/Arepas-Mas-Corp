@@ -67,7 +67,7 @@ const products = [
     name: 'Pandebono',
     description: 'Paquete de 10 unidades - Producto prehorneado',
     pack: '10',
-    price: 11.00,
+    price: 15.00,
     image: pandebono
   },
   {
