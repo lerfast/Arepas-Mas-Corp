@@ -8,7 +8,7 @@ import logo from './assets/logo.png'; // Importa el logo
 import heroBackground from './assets/hero-background.jpg'; // Imagen de fondo para el header
 import { CartProvider, CartContext } from './context/CartContext'; // Importa CartContext
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp, faFacebook, faInstagram, faXTwitter } from '@fortawesome/free-brands-svg-icons';  // Íconos de redes sociales
+import { faWhatsapp, faFacebook, faInstagram, faXTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'; // Íconos de redes sociales
 
 // Importa las imágenes de los clientes
 import mujer1 from './assets/mujer1.jpg';
@@ -18,6 +18,19 @@ import hombre from './assets/hombre.jpg';
 // Importa la librería AOS para las animaciones
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Importa los estilos de AOS
+
+// Variantes para la animación del footer
+const footerVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      delay: 0.5,
+    },
+  },
+};
 
 function App() {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -154,11 +167,19 @@ function App() {
 
             {/* Párrafo adicional de promoción personal */}
             <p data-aos="fade-up" data-aos-delay="300" style={{ marginTop: '20px', fontStyle: 'italic', fontSize: '1rem' }}>
-              Sitio Web desarrollado por <strong>Luis Emilio Rojas</strong>. Contáctame tocando el ícono para crear tu sitio web: 
-              <a href="https://wa.me/573187757620" target="_blank" rel="noopener noreferrer" className="whatsapp-link">
-                <FontAwesomeIcon icon={faWhatsapp} className="whatsapp-icon" /> 
-              </a>
-            </p>
+  Sitio Web desarrollado por <strong>Luis Emilio Rojas</strong>. 
+  ¿Quieres un sitio web como este? ¡Hablemos!
+  <a href="https://wa.me/573187757620" target="_blank" rel="noopener noreferrer" className="icon-link whatsapp-link">
+    <FontAwesomeIcon icon={faWhatsapp} className="icon whatsapp-icon" />
+  </a>
+  <a href="https://www.linkedin.com/in/luisemiliorojas/" target="_blank" rel="noopener noreferrer" className="icon-link linkedin-link">
+    <FontAwesomeIcon icon={faLinkedin} className="icon linkedin-icon" />
+  </a>
+  <a href="https://github.com/lerfast" target="_blank" rel="noopener noreferrer" className="icon-link github-link">
+    <FontAwesomeIcon icon={faGithub} className="icon github-icon" />
+  </a>
+</p>
+
 
             <div className="social-media" data-aos="fade-up" data-aos-delay="400">
               <a href="https://facebook.com" className="social-icon" aria-label="Facebook">

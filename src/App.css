@@ -1,6 +1,5 @@
 /* GENERAL */
 
-
 /* Previene el desbordamiento de cualquier elemento */
 * {
   margin: 0;
@@ -291,39 +290,62 @@ section {
   background-color: #f39c12;
 }
 
-
-/* Estilo para el ícono de WhatsApp */
-.whatsapp-link {
+/* Estilo para el ícono de WhatsApp, LinkedIn y GitHub */
+.whatsapp-link,
+.linkedin-link,
+.github-link {
   text-decoration: none;
-  margin-right: 10px;
   display: inline-flex;
   align-items: center;
+  margin-right: 10px;
 }
 
+/* Colores originales de los íconos */
 .whatsapp-icon {
-  color: #25D366; /* Color verde de WhatsApp */
+  color: #25D366; /* Verde WhatsApp */
   font-size: 24px; /* Ajusta el tamaño del ícono */
   margin-right: -5px; /* Espacio entre el ícono y el número */
   margin-left: 10px;
 }
 
+.linkedin-icon {
+  color: #0077B5; /* Azul LinkedIn */
+  font-size: 24px; /* Ajusta el tamaño del ícono */
+  
+}
+
+.github-icon {
+  color: #e8e5e5; /* Negro GitHub */
+  font-size: 24px; /* Ajusta el tamaño del ícono */
+  margin-right: 10px;
+}
+
+/* Hover states para los íconos */
 .whatsapp-link:hover .whatsapp-icon {
-  color: #128C7E; /* Un verde más oscuro al hacer hover */
+  color: #128C7E; /* Verde más oscuro para WhatsApp en hover */
 }
 
-/* Si necesitas ajustar los íconos de redes sociales */
-.social-icon {
+.linkedin-link:hover .linkedin-icon {
+  color: #005582; /* Azul más oscuro para LinkedIn en hover */
+}
+
+.github-link:hover .github-icon {
+  color: #a8a3a3; /* Negro más oscuro para GitHub en hover */
+}
+
+
+.icon-link {
+  display: inline-flex; /* Alinea los íconos con el texto */
+  align-items: center; /* Alineación vertical centrada */
+  margin-right: 10px; /* Espacio entre los íconos */
+  font-size: 24px; /* Tamaño consistente para todos los íconos */
+}
+
+/* Asegura que todos los íconos tengan el mismo tamaño */
+.icon {
   font-size: 24px;
-  margin-right: 15px;
-  color: #333;
-  transition: color 0.3s;
+  vertical-align: middle; /* Alineación vertical */
 }
-
-.social-icon:hover {
-  color: #3498db; /* Color al hacer hover en los íconos sociales */
-}
-
-
 /* MEDIA QUERIES - RESPONSIVE DESIGN */
 
 /* Para pantallas de tablets (anchura máxima de 1024px) */
