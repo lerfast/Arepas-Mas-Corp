@@ -180,6 +180,17 @@ function App() {
   </a>
 </p>
 
+            {/* Contador de visitas de HitWebCounter */}
+            <div className="visit-counter">
+              <a href="https://www.hitwebcounter.com" target="_blank" rel="noopener noreferrer">
+                <img 
+                  src="https://hitwebcounter.com/counter/counter.php?page=17014722&style=0038&nbdigits=9&type=page&initCount=0"
+                  title="Counter Widget"
+                  alt="Visit counter For Websites"
+                  border="0"
+                />
+              </a>
+            </div>
 
             <div className="social-media" data-aos="fade-up" data-aos-delay="400">
               <a href="https://facebook.com" className="social-icon" aria-label="Facebook">
