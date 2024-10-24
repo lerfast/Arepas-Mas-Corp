@@ -1,10 +1,11 @@
+// src/components/Checkout.js
 import React, { useState, useContext } from 'react';
 import emailjs from 'emailjs-com';
 import { CartContext } from '../context/CartContext';
-import './Checkout.css'; // Asegúrate de tener un archivo CSS para los estilos
+import './Checkout.css';
 
 const Checkout = () => {
-  const { cart, clearCart, getTotal } = useContext(CartContext); // Usamos getTotal para obtener el total
+  const { cart, clearCart, getTotal } = useContext(CartContext);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,40 +16,36 @@ const Checkout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     if (cart.length === 0) {
       setMessage('El carrito está vacío.');
       return;
     }
-  
-    // Debug: Verifica si el email es válido antes de enviar
+
     if (!formData.email || !formData.email.includes('@') || formData.email.includes(' ')) {
       setMessage('El correo electrónico es inválido.');
       return;
     }
 
-    // Debug: Log para verificar el correo electrónico antes de enviar el correo
-    console.log("Sending email to:", formData.email);  // Esto te mostrará el correo que está siendo enviado en la consola del navegador
-  
     const orderDetails = cart
       .map((item) => `${item.name} (Cantidad: ${item.quantity})`)
       .join(', ');
-  
+
     const templateParams = {
       name: formData.name,
-      email: formData.email,  // Asegúrate de que estás enviando el email del cliente
+      email: formData.email,
       address: formData.address,
       phone: formData.phone,
       order: orderDetails,
-      total: getTotal().toFixed(2),  // Envía el total del pedido también
+      total: getTotal().toFixed(2),
     };
-  
+
     emailjs
       .send(
-        'service_k45d4h9', // Service ID
-        'template_5ec7k58', // Template ID
+        'service_k45d4h9',
+        'template_5ec7k58',
         templateParams,
-        'R5r9h5kY8r9zgVUJJ' // Public Key (User ID)
+        'R5r9h5kY8r9zgVUJJ'
       )
       .then(
         (response) => {
@@ -62,7 +59,6 @@ const Checkout = () => {
         }
       );
   };
-  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -73,7 +69,7 @@ const Checkout = () => {
     <div className="checkout-container" data-aos="fade-up">
       <h2>Checkout</h2>
       {message && <p className="message">{message}</p>}
-      
+
       {cart.length === 0 ? (
         <p className="empty-cart">No hay productos en el carrito</p>
       ) : (

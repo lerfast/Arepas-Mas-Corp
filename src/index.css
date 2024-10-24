@@ -1,13 +1,151 @@
-body {
+/* src/index.css */
+
+/* GENERAL */
+
+/* Previene el desbordamiento de cualquier elemento */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Previene el desbordamiento horizontal */
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: #333;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #ebedef;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #f39c12;
+}
+
+/* MEDIA QUERIES - RESPONSIVE DESIGN */
+
+/* Para pantallas de tablets (anchura máxima de 1024px) */
+@media (max-width: 1024px) {
+  .hero-content {
+    margin-top: 60px; /* Elimina el margen negativo en móviles */
+    padding: 15px; /* Reduce un poco el padding en móviles */
+  }
+
+  .logo {
+    width: 130px;
+    height: auto;
+    margin-left: -12px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .about-us {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 90%;
+  }
+
+  .testimonials {
+    flex-direction: column; /* Cambia a disposición en columna */
+    align-items: center; /* Alinea los elementos en el centro */
+  }
+
+  .testimonial {
+    margin-bottom: 20px; /* Añade espacio entre testimonios */
+  }
+
+  .testimonial img {
+    width: 80px; /* Reduce el tamaño de las imágenes */
+    height: 80px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Para pantallas de móviles (anchura máxima de 600px) */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .about-us {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 90%;
+  }
+
+  .testimonials {
+    flex-direction: column;
+  }
+
+  .testimonial img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+
+  /* Mostrar el menú hamburguesa en móviles */
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .testimonials-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
 }

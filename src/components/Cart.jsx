@@ -1,10 +1,11 @@
+// src/components/Cart.js
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
-import './Cart.css'; // Añade estilos específicos para el carrito
+import './Cart.css';
 
 const Cart = () => {
-  const { cart, clearCart, updateQuantity, getTotal, removeFromCart } = useContext(CartContext); // Añade removeFromCart
+  const { cart, clearCart, updateQuantity, getTotal, removeFromCart } = useContext(CartContext);
 
   if (cart.length === 0) {
     return (
@@ -34,8 +35,6 @@ const Cart = () => {
                 />
               </div>
               <span className="item-price">${(item.price * item.quantity).toFixed(2)}</span>
-
-              {/* Botón para eliminar el artículo */}
               <button className="remove-button" onClick={() => removeFromCart(item.id)}>
                 Eliminar
               </button>
@@ -44,16 +43,12 @@ const Cart = () => {
         ))}
       </ul>
 
-      {/* Mostrar el total del carrito */}
       <div className="cart-total">
-        <h3>Total: ${getTotal()}</h3>
+        <h3>Total: ${getTotal().toFixed(2)}</h3>
       </div>
 
       <div className="cart-actions">
-        {/* Botón para vaciar el carrito */}
         <button className="clear-cart-button" onClick={clearCart}>Vaciar el Carrito</button>
-
-        {/* Botón para proceder con el checkout */}
         <Link to="/checkout">
           <button className="checkout-button">Proceder con el Checkout</button>
         </Link>
