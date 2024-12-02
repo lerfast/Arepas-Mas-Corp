@@ -1,0 +1,41 @@
+/* src/components/AboutUs.css */
+
+/* SOBRE NOSOTROS */
+.about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+  }
+  
+  .about-text {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .about-text .cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+  }
+  
+  .about-text .cta-button:hover {
+    background-color: #0056b3;
+  }
+  

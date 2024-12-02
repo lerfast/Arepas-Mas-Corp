@@ -1,0 +1,89 @@
+/* src/components/Footer.css */
+
+/* CONTACTO */
+.contact-section {
+    background-color: #333;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .social-icon {
+    background-color: #afb2b5;
+    color: white;
+    padding: 10px;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    background-color: #f39c12;
+  }
+  
+  /* Estilo para los íconos */
+  .whatsapp-link,
+  .linkedin-link,
+  .github-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .whatsapp-icon {
+    color: #25D366;
+    font-size: 24px;
+    margin-right: -5px;
+    margin-left: 10px;
+  }
+  
+  .linkedin-icon {
+    color: #0077B5;
+    font-size: 24px;
+  }
+  
+  .github-icon {
+    color: #e8e5e5;
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .whatsapp-link:hover .whatsapp-icon {
+    color: #128C7E;
+  }
+  
+  .linkedin-link:hover .linkedin-icon {
+    color: #005582;
+  }
+  
+  .github-link:hover .github-icon {
+    color: #a8a3a3;
+  }
+  
+  .icon-link {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    font-size: 24px;
+  }
+  
+  .icon {
+    font-size: 24px;
+    vertical-align: middle;
+  }
+  

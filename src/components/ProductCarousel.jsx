@@ -1,9 +1,10 @@
+// src/components/ProductCarousel.js
 import React, { useContext, useState } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import './ProductCarousel.css'; // Archivo de estilos del carrusel
-import { CartContext } from '../context/CartContext'; // Importa el CartContext
+import './ProductCarousel.css';
+import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
 // Importa las imágenes de los productos
@@ -121,9 +122,9 @@ const products = [
 ];
 
 const ProductCarousel = () => {
-  const { addToCart, cart } = useContext(CartContext); // Usa el contexto del carrito
+  const { addToCart, cart } = useContext(CartContext);
   const [quantities, setQuantities] = useState({});
-  const [confirmationMessage, setConfirmationMessage] = useState(null); // Nuevo estado para el mensaje de confirmación
+  const [confirmationMessage, setConfirmationMessage] = useState(null);
 
   const handleQuantityChange = (productId, quantity) => {
     setQuantities((prev) => ({ ...prev, [productId]: quantity }));
@@ -131,12 +132,10 @@ const ProductCarousel = () => {
 
   const handleAddToCart = (product, quantity) => {
     addToCart(product, quantity);
-    
-    // Establecer el mensaje de confirmación y hacer que desaparezca después de 3 segundos
     setConfirmationMessage(`${quantity} ${product.name} añadido al carrito.`);
     setTimeout(() => {
-      setConfirmationMessage(null); // Desaparecer mensaje
-    }, 3000); // 3 segundos
+      setConfirmationMessage(null);
+    }, 3000);
   };
 
   const settings = {
@@ -168,8 +167,7 @@ const ProductCarousel = () => {
   return (
     <div className="carousel-container">
       <h2>Nuestros Productos</h2>
-      {confirmationMessage && <div className="confirmation-message">{confirmationMessage}</div>} {/* Mostrar el mensaje */}
-
+      {confirmationMessage && <div className="confirmation-message">{confirmationMessage}</div>}
       <Slider {...settings}>
         {products.map((product) => (
           <div key={product.id} className="product-card">
