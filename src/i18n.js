@@ -137,9 +137,14 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'es',
+    lng: 'es', // Establece el idioma inicial en español
+    fallbackLng: 'es', // Configura español como idioma predeterminado si no se detecta otro
+    detection: {
+      order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
+      caches: ['localStorage', 'cookie'], // Guarda el idioma preferido del usuario
+    },
     interpolation: {
-      escapeValue: false, // React already protects against XSS
+      escapeValue: false, // React ya protege contra XSS
     },
   });
 
