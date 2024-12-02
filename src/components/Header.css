@@ -1,172 +1,201 @@
-/* src/components/Header.css */
-
 /* HEADER */
 .app-header {
-    width: 100%;
-    height: 80vh;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    position: relative;
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* Barra de navegación */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
+}
+
+/* Contenedor del logo y frase */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 30px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.logo-subtitle {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-top: 5px;
+  font-weight: bold;
+  background-color: #f39c12;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  margin-left: -30px;
+}
+
+/* Menú */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden;
+}
+
+.menu li {
+  font-size: 1.2rem;
+}
+
+.hero-content {
+  margin-top: -20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.sub-header {
+  font-size: 1.5rem;
+  color: #f39c12;
+  margin-top: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Botón CTA */
+.cta-button {
+  background-color: #f39c12;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+  text-transform: uppercase;
+}
+
+.cta-button:hover {
+  background-color: #d35400;
+}
+
+/* Menú hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+/* Menú móvil */
+.menu {
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu.open {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 18px;
+  right: 111px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  transform: translateY(0);
+  width: auto;
+  max-width: calc(100% - 40px);
+}
+
+.menu li {
+  margin-bottom: 10px;
+}
+
+/* Cambiar idioma */
+.language-switch {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.language-switch button {
+  background: #f39c12;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.language-switch button:hover {
+  background: #d35400;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1024px) {
+  .logo-container {
+      align-items: flex-start;
   }
-  
-  /* Barra de navegación */
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    overflow-x: hidden;
-  }
-  
+
   .logo {
-    width: 150px;
-    height: auto;
-    margin-left: 30px;
+      width: 120px;
   }
-  
-  .menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    overflow-x: hidden;
+
+  .logo-subtitle {
+      font-size: 0.85rem;
   }
-  
-  .menu li {
-    font-size: 1.2rem;
-  }
-  
-  .hero-content {
-    margin-top: -20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
+
   .hero-content h1 {
-    font-size: 5rem;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
-  }
-  
-  .hero-content p {
-    font-size: 1.5rem;
-    color: #fff;
-    margin-bottom: 20px;
-  }
-  
-  .cta-button {
-    background-color: #f39c12;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    margin-top: 20px;
-    transition: background 0.3s ease;
-    text-transform: uppercase;
-  }
-  
-  .cta-button:hover {
-    background-color: #d35400;
-  }
-  
-  /* HAMBURGER MENU */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    margin-right: 20px;
-  }
-  
-  .hamburger .bar {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
-  }
-  
-  /* MOBILE MENU (CERRADO) */
-  .menu {
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .menu.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 18px;
-    right: 111px;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    border-radius: 10px;
-    transform: translateY(0);
-    width: auto;
-    max-width: calc(100% - 40px);
-  }
-  
-  .menu li {
-    margin-bottom: 10px;
-  }
-  
-  /* MEDIA QUERIES */
-  @media (max-width: 1024px) {
-    .hero-content {
-      margin-top: 60px;
-      padding: 15px;
-    }
-  
-    .logo {
-      width: 130px;
-      height: auto;
-      margin-left: -12px;
-    }
-  
-    .menu {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .hero-content h1 {
       font-size: 3.5rem;
-    }
-  
-    .hero-content p {
-      font-size: 1.5rem;
-    }
-  
-    .cta-button {
-      font-size: 1rem;
-      padding: 8px 16px;
-    }
   }
-  
-  @media (max-width: 600px) {
-    .hero-content h1 {
-      font-size: 2.5rem;
-    }
-  
-    .hero-content p {
-      font-size: 1rem;
-    }
-  
-    .cta-button {
-      font-size: 1rem;
-      padding: 8px 16px;
-    }
-  
+
+  .hero-content p {
+      font-size: 1.2rem;
+  }
+
+  .sub-header {
+      font-size: 1.2rem;
+  }
+
     /* Mostrar el menú hamburguesa en móviles */
     .hamburger {
       display: flex;
@@ -179,5 +208,38 @@
     .menu.open {
       display: flex;
     }
+}
+
+@media (max-width: 600px) {
+  .logo-container {
+      align-items: flex-start;
+      margin-left: 10px;
+  }
+
+  .logo {
+      width: 100px;
+      margin-left: -20px;
+  }
+
+  .logo-subtitle {
+      font-size: 0.75rem;
+      text-align: left;
+      margin-left: -38px;
+  }
+
+  .hero-content h1 {
+      font-size: 2.5rem;
+  }
+
+  .hero-content p {
+      font-size: 1rem;
+  }
+
+  .sub-header {
+      font-size: 1rem;
+  }
+
+
+  
   }
   

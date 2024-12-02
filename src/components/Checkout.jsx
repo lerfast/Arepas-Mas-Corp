@@ -2,9 +2,11 @@
 import React, { useState, useContext } from 'react';
 import emailjs from 'emailjs-com';
 import { CartContext } from '../context/CartContext';
+import { useTranslation } from 'react-i18next'; // Importar hook de traducción
 import './Checkout.css';
 
 const Checkout = () => {
+  const { t } = useTranslation(); // Hook de traducción
   const { cart, clearCart, getTotal } = useContext(CartContext);
   const [formData, setFormData] = useState({
     name: '',
@@ -18,17 +20,17 @@ const Checkout = () => {
     e.preventDefault();
 
     if (cart.length === 0) {
-      setMessage('El carrito está vacío.');
+      setMessage(t('empty_cart_message'));
       return;
     }
 
     if (!formData.email || !formData.email.includes('@') || formData.email.includes(' ')) {
-      setMessage('El correo electrónico es inválido.');
+      setMessage(t('invalid_email_message'));
       return;
     }
 
     const orderDetails = cart
-      .map((item) => `${item.name} (Cantidad: ${item.quantity})`)
+      .map((item) => `${t(`product_names.${item.id}`) || item.name} (${t('quantity')}: ${item.quantity})`)
       .join(', ');
 
     const templateParams = {
@@ -50,12 +52,12 @@ const Checkout = () => {
       .then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
-          setMessage('Pedido enviado exitosamente.');
+          setMessage(t('order_success_message'));
           clearCart();
         },
         (err) => {
           console.log('FAILED...', err);
-          setMessage('Error al enviar el pedido.');
+          setMessage(t('order_failure_message'));
         }
       );
   };
@@ -67,30 +69,30 @@ const Checkout = () => {
 
   return (
     <div className="checkout-container" data-aos="fade-up">
-      <h2>Checkout</h2>
+      <h2>{t('checkout_title')}</h2>
       {message && <p className="message">{message}</p>}
 
       {cart.length === 0 ? (
-        <p className="empty-cart">No hay productos en el carrito</p>
+        <p className="empty-cart">{t('empty_cart')}</p>
       ) : (
         <>
           <div className="order-summary">
-            <h3>Resumen del Pedido</h3>
+            <h3>{t('order_summary')}</h3>
             <ul>
               {cart.map((item, index) => (
                 <li key={index}>
-                  {item.name} - Cantidad: {item.quantity} - Precio Unitario: ${item.price.toFixed(2)} - Total: ${(item.price * item.quantity).toFixed(2)}
+                  {t(`product_names.${item.id}`) || item.name} - {t('quantity')}: {item.quantity} - {t('price')}: ${item.price.toFixed(2)} - {t('total')}: ${(item.price * item.quantity).toFixed(2)}
                 </li>
               ))}
             </ul>
             <div className="order-total">
-              <strong>Total del pedido: ${getTotal().toFixed(2)}</strong>
+              <strong>{t('order_total')}: ${getTotal().toFixed(2)}</strong>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="checkout-form">
             <div className="form-group">
-              <label>Nombre:</label>
+              <label>{t('name')}:</label>
               <input
                 type="text"
                 name="name"
@@ -100,7 +102,7 @@ const Checkout = () => {
               />
             </div>
             <div className="form-group">
-              <label>Correo electrónico:</label>
+              <label>{t('email')}:</label>
               <input
                 type="email"
                 name="email"
@@ -110,7 +112,7 @@ const Checkout = () => {
               />
             </div>
             <div className="form-group">
-              <label>Dirección:</label>
+              <label>{t('address')}:</label>
               <input
                 type="text"
                 name="address"
@@ -120,7 +122,7 @@ const Checkout = () => {
               />
             </div>
             <div className="form-group">
-              <label>Teléfono:</label>
+              <label>{t('phone')}:</label>
               <input
                 type="text"
                 name="phone"
@@ -129,7 +131,7 @@ const Checkout = () => {
                 required
               />
             </div>
-            <button type="submit" className="submit-button">Enviar Pedido</button>
+            <button type="submit" className="submit-button">{t('submit_order')}</button>
           </form>
         </>
       )}

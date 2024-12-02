@@ -1,33 +1,33 @@
 // src/components/Footer.js
 import React from 'react';
+import { useTranslation } from 'react-i18next'; // Hook para traducción
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faFacebook, faInstagram, faXTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import './Footer.css';
 
 const Footer = () => {
+  const { t } = useTranslation(); // Hook de traducción
+
   return (
     <footer id="contact" className="contact-section" data-aos="fade-up">
-      <h2>Contacto</h2>
+      <h2>{t('contact_us')}</h2>
       <p data-aos="fade-up" data-aos-delay="100">
-        Para pedidos, también puedes comunicarte al: 
+        {t('contact_message')} 
         <a
           href="https://wa.me/17865437061"
           target="_blank"
           rel="noopener noreferrer"
           className="whatsapp-link"
-          aria-label="Contacta vía WhatsApp"
+          aria-label={t('contact_via_whatsapp')}
         >
           <FontAwesomeIcon icon={faWhatsapp} className="whatsapp-icon" />
         </a>
         <strong>+1(786)-543-7061</strong>
       </p>
       <p data-aos="fade-up" data-aos-delay="200">
-        Gracias por preferirnos. ¡Esperamos llevar los sabores de Colombia para ti o tu negocio!
-      
-
-     
-        Sitio Web desarrollado por <strong>Luis Emilio Rojas</strong>. 
-        ¿Quieres un sitio web como este? ¡Hablemos!
+        {t('contact_closing')} <br />
+        {t('developed_by')} <strong></strong>. <br />
+        {t('contact_follow_up')}
         <a href="https://wa.me/573187757620" target="_blank" rel="noopener noreferrer" className="icon-link whatsapp-link">
           <FontAwesomeIcon icon={faWhatsapp} className="icon whatsapp-icon" />
         </a>
@@ -38,8 +38,6 @@ const Footer = () => {
           <FontAwesomeIcon icon={faGithub} className="icon github-icon" />
         </a>
       </p>
-
-      
 
       <div className="social-media" data-aos="fade-up" data-aos-delay="400">
         <a href="https://facebook.com" className="social-icon" aria-label="Facebook">
@@ -53,19 +51,17 @@ const Footer = () => {
         </a>
       </div>
 
-{/* Contador de visitas */}
-<div className="visit-counter">
+      {/* Contador de visitas */}
+      <div className="visit-counter">
         <a href="https://www.hitwebcounter.com" target="_blank" rel="noopener noreferrer">
           <img 
             src="https://hitwebcounter.com/counter/counter.php?page=17014722&style=0038&nbdigits=9&type=page&initCount=0"
             title="Counter Widget"
-            alt="Visit counter For Websites"
+            alt={t('visit_counter_alt')}
             border="0"
           />
         </a>
       </div>
-
-
     </footer>
   );
 };
