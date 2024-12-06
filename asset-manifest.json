@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/arepas-mas-corp/static/css/main.f84e8053.css",
-    "main.js": "/arepas-mas-corp/static/js/main.72e8039e.js",
+    "main.js": "/arepas-mas-corp/static/js/main.f5513611.js",
     "static/media/arepa_plain_pequena.jpg": "/arepas-mas-corp/static/media/arepa_plain_pequena.95ead0bd2e92ed723e8b.jpg",
     "static/media/arepa_queso.jpg": "/arepas-mas-corp/static/media/arepa_queso.e39fa52bae090cb42f2f.jpg",
     "static/media/hero-background.jpg": "/arepas-mas-corp/static/media/hero-background.043e5e19702317f89b00.jpg",
@@ -24,10 +24,10 @@
     "static/media/slick.woff": "/arepas-mas-corp/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/arepas-mas-corp/index.html",
     "main.f84e8053.css.map": "/arepas-mas-corp/static/css/main.f84e8053.css.map",
-    "main.72e8039e.js.map": "/arepas-mas-corp/static/js/main.72e8039e.js.map"
+    "main.f5513611.js.map": "/arepas-mas-corp/static/js/main.f5513611.js.map"
   },
   "entrypoints": [
     "static/css/main.f84e8053.css",
-    "static/js/main.72e8039e.js"
+    "static/js/main.f5513611.js"
   ]
 }
